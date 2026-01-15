@@ -2,20 +2,33 @@
 
 import Link from "next/link";
 import { X, Sparkles, ShieldCheck, Zap, Globe } from "lucide-react";
+import { ReactElement } from "react";
+
+interface PlanCardProps {
+  title: string;
+  price: string;
+  subtitle: string;
+  features: string[];
+  icon: ReactElement;
+  accentColor: string;
+  buttonText: string;
+  link: string;
+  isPopular?: boolean;
+}
 
 export default function PlansModal({ onCloseAction }: { onCloseAction: () => void }) {
   return (
     /* Increased Z-Index to 9999 to ensure it sits above the sticky Navbar */
     <div className="fixed inset-0 flex items-center justify-center bg-[#0E2931]/90 backdrop-blur-md z-[9999] p-4 selection:bg-[#861211]/20 font-sans animate-in fade-in duration-300">
-      
+
       {/* Container with explicit dimensions and higher relative z-index */}
       <div className="relative bg-[#E2E2E0] rounded-[2.5rem] shadow-2xl border-[4px] md:border-[8px] border-[#0E2931] w-full max-w-6xl max-h-[90vh] overflow-y-auto overflow-x-hidden z-[10000]">
-        
+
         {/* Subtle Matrix Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0E2931_1px,transparent_1px)] [background-size:30px_30px]" />
 
         {/* Close Button: Fixed to top right of modal */}
-        <button 
+        <button
           onClick={onCloseAction}
           className="absolute top-6 right-6 z-[10010] p-2 bg-[#0E2931] text-white rounded-xl hover:bg-[#861211] transition-all active:scale-95 shadow-lg"
         >
@@ -25,7 +38,7 @@ export default function PlansModal({ onCloseAction }: { onCloseAction: () => voi
         {/* Modal Header */}
         <div className="relative z-10 pt-16 pb-10 px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#0E2931]/10 text-[#0E2931]/60 text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-                <Sparkles size={10} className="text-[#861211]" /> 
+                <Sparkles size={10} className="text-[#861211]" />
                 Tactical Acquisition Hub
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-[#0E2931] tracking-tighter uppercase leading-tight">
@@ -36,8 +49,8 @@ export default function PlansModal({ onCloseAction }: { onCloseAction: () => voi
         {/* Plans Matrix Section */}
         <div className="relative z-10 px-6 sm:px-10 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            
-            <PlanCard 
+
+            <PlanCard
               title="Starter Node"
               price="$99"
               subtitle="Ideal for individuals"
@@ -48,7 +61,7 @@ export default function PlansModal({ onCloseAction }: { onCloseAction: () => voi
               link="/sign-in"
             />
 
-            <PlanCard 
+            <PlanCard
               title="Resilience Pro"
               price="$199"
               subtitle="Optimized for schools"
@@ -60,7 +73,7 @@ export default function PlansModal({ onCloseAction }: { onCloseAction: () => voi
               isPopular
             />
 
-            <PlanCard 
+            <PlanCard
               title="Network Core"
               price="Starts $299"
               subtitle="For large institutions"
@@ -78,7 +91,7 @@ export default function PlansModal({ onCloseAction }: { onCloseAction: () => voi
   );
 }
 
-function PlanCard({ title, price, subtitle, features, icon, accentColor, buttonText, link, isPopular }: any) {
+function PlanCard({ title, price, subtitle, features, icon, accentColor, buttonText, link, isPopular }: PlanCardProps) {
   return (
     <div className={`flex flex-col group relative bg-white border border-[#0E2931]/5 rounded-[2rem] p-8 transition-all duration-500 hover:scale-[1.02] shadow-xl ${isPopular ? 'ring-4 ring-[#861211]/20' : ''}`}>
       <div className="relative z-10 flex-grow">

@@ -6,6 +6,7 @@ import ContactPage from "./contact/page";
 import AboutPage from "./about/page";
 import DarkCommunitySection from "./components/DarkCommunitySection";
 import CareerSection from "./components/CareerSection";
+import TestimonialsSection from "./components/Testimonial";
 
 export default function HomePage() {
   return (
@@ -96,6 +97,7 @@ export default function HomePage() {
 
         {/* Sub-sections - All forced to bg-transparent */}
         <div className="bg-transparent"><CareerSection /></div>
+        <div className="bg-transparent"><TestimonialsSection /></div>
         <div className="bg-transparent"><ContactPage /></div>
         <div className="bg-transparent"><DarkCommunitySection /></div>
       </div>

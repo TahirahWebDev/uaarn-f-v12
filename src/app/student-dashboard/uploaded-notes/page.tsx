@@ -5,7 +5,6 @@ import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { getNotes } from "@/sanity/lib/client";
 import { Sparkles, FileText, Eye, Download, ArrowLeft } from "lucide-react";
-import Link from "next/link";
 
 type Note = {
   _id: string;
@@ -43,10 +42,10 @@ export default function UploadedNotesPage() {
   return (
     <div className="min-h-screen bg-[#E2E2E0] p-8 selection:bg-[#861211]/20 font-sans">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Navigation / Back Button */}
-        <button 
-          onClick={() => router.back()} 
+        <button
+          onClick={() => router.back()}
           className="inline-flex items-center gap-2 text-[#0E2931]/40 hover:text-[#861211] font-black text-[10px] uppercase tracking-[0.3em] transition-all mb-10 group"
         >
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
@@ -57,7 +56,7 @@ export default function UploadedNotesPage() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0E2931]/5 border border-[#0E2931]/10 text-[#0E2931]/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
-              <Sparkles size={10} className="text-[#861211]" /> 
+              <Sparkles size={10} className="text-[#861211]" />
               Neural Asset Repository
             </div>
             <h1 className="text-4xl font-black text-[#0E2931] tracking-tighter uppercase leading-none">
@@ -133,7 +132,7 @@ export default function UploadedNotesPage() {
                     <Download size={14} /> Download
                   </a>
                 </div>
-                
+
                 {/* Hover Slide-up Accent */}
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-[#861211] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>

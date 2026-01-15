@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Send, AlertCircle, Bot, Sparkles } from "lucide-react";
+import { AlertCircle, Bot, Sparkles } from "lucide-react";
 import ChatBubble from "../components/ChatBubble"; // Path to your component
 import ChatInput from "../components/ChatInput";   // Path to your component
 
@@ -42,7 +42,7 @@ export default function AskPage() {
                 const reply = formatResponse(data.reply);
                 setMessages((prev) => [...prev, { role: "ai", content: reply }]);
             }
-        } catch (error) {
+        } catch (error) { // eslint-disable-next-line no-unused-vars
             setMessages((prev) => [...prev, { role: "ai", content: "Network error. Please try again." }]);
         } finally {
             setLoading(false);
@@ -53,7 +53,7 @@ export default function AskPage() {
         <div className="bg-[#E2E2E0] min-h-screen selection:bg-[#861211]/20">
             <div className="max-w-5xl mx-auto px-4 pt-10 pb-20">
                 <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-[#0E2931]/5 flex flex-col h-[85vh]">
-                    
+
                     {/* Header: Deep Teal Theme */}
                     <div className="border-b border-[#0E2931]/10 px-8 py-5 flex justify-between items-center bg-white">
                         <div className="flex items-center gap-3">
@@ -85,9 +85,9 @@ export default function AskPage() {
                         )}
 
                         {messages.map((msg, i) => (
-                            <ChatBubble 
-                                key={i} 
-                                isUser={msg.role === "user"} 
+                            <ChatBubble
+                                key={i}
+                                isUser={msg.role === "user"}
                                 dangerouslySetInnerHTML={!msg.content.includes("Error:") ? { __html: msg.content } : undefined}
                             >
                                 {msg.content.includes("Error:") && (

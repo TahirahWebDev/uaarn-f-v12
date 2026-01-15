@@ -8,8 +8,6 @@ import {
   FileText,
   Volume2,
   Square,
-  Download,
-  File,
   Sparkles,
   Brain,
   RotateCcw,

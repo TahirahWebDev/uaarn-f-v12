@@ -1,14 +1,13 @@
 "use client";
-import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { Target, Lightbulb, Shield, Sparkles } from "lucide-react"; 
+import { Target, Lightbulb, Shield } from "lucide-react";
 
 export default function AboutPage() {
   return (
     /* Main Background: Soft Bone White (#E2E2E0) */
     <div className="bg-[#E2E2E0] text-[#0E2931] px-6 py-10 flex flex-col items-center w-full relative overflow-hidden selection:bg-[#861211]/20 font-sans">
-      
+
       {/* Dynamic Background Accents */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2B7574]/5 blur-[120px] rounded-full -z-10" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#861211]/5 blur-[120px] rounded-full -z-10" />
@@ -24,7 +23,7 @@ export default function AboutPage() {
             </span>
           </Link>
         </h2>
-        
+
         <div className="space-y-8 max-w-3xl mx-auto">
           <p className="text-[#0E2931]/80 leading-relaxed text-2xl md:text-3xl font-light italic">
             UAARN is a high-fidelity educational ecosystem designed to make learning
@@ -36,20 +35,20 @@ export default function AboutPage() {
 
       {/* --- BRAND PILLARS SECTION --- */}
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-40 relative z-10">
-        <PillarCard 
-          icon={<Target size={24} />} 
-          title="Precision" 
-          desc="Laser-focused explanations that cut through academic complexity." 
+        <PillarCard
+          icon={<Target size={24} />}
+          title="Precision"
+          desc="Laser-focused explanations that cut through academic complexity."
         />
-        <PillarCard 
-          icon={<Lightbulb size={24} />} 
-          title="Innovation" 
-          desc="Leveraging high-fidelity AI models to personalize neural paths." 
+        <PillarCard
+          icon={<Lightbulb size={24} />}
+          title="Innovation"
+          desc="Leveraging high-fidelity AI models to personalize neural paths."
         />
-        <PillarCard 
-          icon={<Shield size={24} />} 
-          title="Resilience" 
-          desc="Building a robust network of knowledge that adapts to every learner." 
+        <PillarCard
+          icon={<Shield size={24} />}
+          title="Resilience"
+          desc="Building a robust network of knowledge that adapts to every learner."
         />
       </div>
 
@@ -58,7 +57,7 @@ export default function AboutPage() {
          <div className="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-white/5 rounded-tr-[3rem]" />
          <p className="relative z-10 text-[#E2E2E0]/40 text-[10px] font-black uppercase tracking-[0.5em] mb-8">The Mission</p>
          <h3 className="relative z-10 text-[#E2E2E0] text-3xl md:text-4xl font-black uppercase tracking-tighter leading-tight italic">
-          "To democratize education through technology — helping every learner access knowledge and clarity instantly."
+          &quot;To democratize education through technology — helping every learner access knowledge and clarity instantly.&quot;
          </h3>
       </div>
 
@@ -69,7 +68,7 @@ export default function AboutPage() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          
+
           {/* Team Member Card - Maryam */}
           <div className="group relative p-10 rounded-[2.5rem] bg-white border border-[#0E2931]/5 shadow-sm hover:shadow-2xl hover:shadow-[#2B7574]/10 transition-all duration-500 flex flex-col items-center">
             <div className="relative mb-8">

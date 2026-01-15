@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Send, Brain, Sparkles, CheckCircle, AlertCircle, ArrowLeft } from "lucide-react";
+import { Send, Brain, Sparkles, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function QuizPage() {
     type Quiz = {
@@ -24,7 +24,7 @@ export default function QuizPage() {
         if (!topic.trim()) return;
 
         setMessages((prev) => [...prev, { role: "user", content: topic }]);
-        setTopic(""); 
+        setTopic("");
         setLoading(true);
 
         try {
@@ -77,7 +77,7 @@ export default function QuizPage() {
 
                 {/* --- CONTAINER HEIGHT UPDATED TO 85vh --- */}
                 <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-[#0E2931]/5 overflow-hidden border border-[#0E2931]/5 flex flex-col h-[85vh]">
-                    
+
                     {/* Toolbar */}
                     <div className="border-b border-[#0E2931]/10 px-8 py-5 flex justify-between items-center bg-white">
                         <h2 className="text-xl font-black text-[#0E2931] uppercase tracking-tighter flex items-center gap-3">
@@ -114,7 +114,7 @@ export default function QuizPage() {
                                 <div
                                     className={`max-w-[90%] rounded-[1.5rem] leading-relaxed shadow-sm transition-all duration-300 ${
                                         msg.role === "user"
-                                            ? "bg-[#861211] text-white rounded-tr-sm px-6 py-4 shadow-lg shadow-[#861211]/20" 
+                                            ? "bg-[#861211] text-white rounded-tr-sm px-6 py-4 shadow-lg shadow-[#861211]/20"
                                             : "bg-white border border-[#0E2931]/5 text-[#0E2931] rounded-tl-sm p-6 md:p-8"
                                     }`}
                                 >
@@ -130,7 +130,7 @@ export default function QuizPage() {
                                                     </span>
                                                 </p>
                                             </div>
-                                            
+
                                             {msg.content.map((q, idx) => (
                                                 <div key={idx} className="relative group">
                                                     <h3 className="font-black text-lg text-[#0E2931] uppercase tracking-tighter mb-5 flex gap-3">
@@ -175,7 +175,7 @@ export default function QuizPage() {
                                 </div>
                             </div>
                         )}
-                        <div className="pt-2" /> 
+                        <div className="pt-2" />
                     </div>
 
                     {/* Input Area */}

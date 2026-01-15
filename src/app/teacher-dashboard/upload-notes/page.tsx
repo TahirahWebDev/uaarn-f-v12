@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
-import { FileUp, UploadCloud, ShieldCheck, ArrowLeft, Sparkles, FileText } from "lucide-react";
+import { UploadCloud, ShieldCheck, ArrowLeft } from "lucide-react";
 
 export default function UploadNotes() {
   const { user } = useUser();
@@ -87,43 +87,43 @@ export default function UploadNotes() {
 
   return (
     <main className="min-h-screen bg-[#E2E2E0] flex items-center justify-center p-6 selection:bg-[#861211]/20 font-sans">
-      
+
       {/* Structural Container: 10px Deep Teal Frame */}
       <div className="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-6xl overflow-hidden flex flex-col md:flex-row min-h-[750px]">
-        
+
         {/* 1st COLUMN: THEMED LAYERED SIDEBAR */}
         <div className="w-full md:w-[40%] relative bg-[#0E2931] text-[#E2E2E0] p-12 md:p-16 flex flex-col justify-between overflow-hidden">
-          
+
           {/* Background Layering Shapes (Teal curves + Crimson island) */}
           <div className="absolute inset-0 z-0 bg-[#12484C]" />
           <div className="absolute inset-0 z-0 bg-[#2B7574]" style={{ clipPath: 'ellipse(90% 60% at 10% 40%)', opacity: 0.6 }} />
           <div className="absolute inset-0 z-0 bg-[#E2E2E0]" style={{ clipPath: 'polygon(100% 30%, 60% 50%, 80% 80%, 100% 90%)', opacity: 0.1 }} />
           <div className="absolute bottom-0 right-0 w-[90%] h-[60%] z-0 bg-[#861211]" style={{ clipPath: 'polygon(100% 20%, 30% 70%, 50% 100%, 100% 100%)', opacity: 0.85 }} />
-          
+
           <div className="absolute inset-0 z-0 bg-gradient-to-tr from-[#0E2931]/80 via-transparent to-transparent" />
 
           {/* SIDEBAR CONTENT */}
           <div className="relative z-10">
-            <button 
-              onClick={() => router.back()} 
+            <button
+              onClick={() => router.back()}
               className="inline-flex items-center gap-2 text-white/50 hover:text-white font-black text-[9px] uppercase tracking-[0.3em] transition-all mb-12 group"
             >
               <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform" />
               Return to Terminal
             </button>
-            
+
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[9px] font-black uppercase tracking-[0.3em] mb-8">
-              <ShieldCheck size={10} className="text-[#861211]" /> 
+              <ShieldCheck size={10} className="text-[#861211]" />
               SECURE ASSET SYNC
             </div>
-            
+
             <h1 className="text-5xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
               Upload <br />
               <span className="text-white drop-shadow-[2px_2px_2px_rgba(134,18,17,0.8)]">
                 Notes
               </span>
             </h1>
-            
+
             <p className="text-[#E2E2E0]/80 text-lg font-medium italic leading-relaxed max-w-xs">
               Upload tactical lecture materials, research PDFs, or neural study assets for network distribution.
             </p>
@@ -136,12 +136,12 @@ export default function UploadNotes() {
 
         {/* 2nd COLUMN: MODULAR ACTION ZONE */}
         <div className="w-full md:w-[60%] bg-[#E2E2E0] p-10 md:p-14 flex flex-col justify-center relative">
-          
+
           {/* Subtle Grid Pattern */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0E2931_1px,transparent_1px)] [background-size:30px_30px]" />
 
           <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
-            
+
             {/* Title Entry */}
             <div className="bg-white p-6 rounded-[1.5rem] shadow-sm border border-[#0E2931]/5">
               <label className="block text-[#0E2931]/60 font-black text-[10px] uppercase tracking-[0.2em] mb-2">Asset Identification</label>
@@ -190,8 +190,8 @@ export default function UploadNotes() {
               type="submit"
               disabled={loading}
               className={`w-full py-6 rounded-2xl transition-all font-black uppercase tracking-[0.4em] text-xs shadow-xl ${
-                loading 
-                  ? "bg-[#861211]/50 cursor-not-allowed text-white/50" 
+                loading
+                  ? "bg-[#861211]/50 cursor-not-allowed text-white/50"
                   : "bg-[#861211] text-white hover:bg-[#6a0e0d] hover:shadow-[#861211]/30 active:scale-[0.98]"
               }`}
             >
