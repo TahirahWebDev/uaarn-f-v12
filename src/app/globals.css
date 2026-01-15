@@ -2,10 +2,11 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/theme";
 
+/* globals.css */
 body {
-  background-color: #f9f9f9;
-  color: #0a0a0a;
-  font-family: 'Poppins', sans-serif;
+  background-color: transparent; /* Your palette's base light color */
+  margin: 0;
+  padding: 0;
 }
 
 .hover-lift {
